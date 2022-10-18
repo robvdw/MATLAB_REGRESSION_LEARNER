@@ -211,6 +211,7 @@ openExample('nnet/TransferLearningUsingGoogLeNetExample')
 </p>
 
 ```
+====> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\RECOURCES\NNET
 ====>  cd('C:\Users\rob\Documents\MATLAB\Examples\R2022a\nnet\TransferLearningUsingGoogLeNetExample')
 ====> MUST contain images folder <=====
 

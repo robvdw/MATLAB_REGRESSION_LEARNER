@@ -83,7 +83,7 @@ view(net)
 
 * [Is Regression Machine learning](https://stats.stackexchange.com/questions/268755/when-should-linear-regression-be-called-machine-learning)
 
-* 
+* [Shallow Neural Networks with Parallel and GPU Computing](https://nl.mathworks.com/help/deeplearning/ug/neural-networks-with-parallel-and-gpu-computing.html)
 
 ********
 ********

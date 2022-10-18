@@ -187,6 +187,27 @@ The app displays information about the exported model in the command window. Rea
 
 
 
+# TRANSFER_LEARNING WITH PRE_TRAINED DEEP NEURAL NETWORKS
+
+This example shows how to use transfer learning to retrain a convolutional neural network to classify a new set of images.
+
+[Pretrained image classification networks](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html) have been trained on over a million images and can classify images into 1000 object categories, such as keyboard, coffee mug, pencil, and many animals. The networks have learned rich feature representations for a wide range of images. The network takes an image as input, and then outputs a label for the object in the image together with the probabilities for each of the object categories.
+
+Transfer learning is commonly used in deep learning applications. You can take a pretrained network and use it as a starting point to learn a new task. Fine-tuning a network with transfer learning is usually much faster and easier than training a network from scratch with randomly initialized weights. You can quickly transfer learned features to a new task using a smaller number of training images.
+
+We start by copying the Command ---shown below--- in Matlab Command Window ====>
+
+```
+openExample('nnet/TransferLearningUsingGoogLeNetExample')
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/684692/196542137-587f7b53-f023-4652-8926-3819cb7d37b6.png" width=100% height=100%>
+</p>
+
+
+
+
+
 # CSV DATA-SETS
 ```
 ====> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
@@ -224,8 +245,10 @@ Mode                 LastWriteTime         Length Name
 
 * [Data Sets for Deep Learning](https://nl.mathworks.com/help/deeplearning/ug/data-sets-for-deep-learning.html#responsive_offcanvas)
 
-*[Train Deep Learning Network to Classify New Images](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html)
+* [Train Deep Learning Network to Classify New Images](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html)
 
+* ===> C:\Users\rob\Documents\MATLAB\Examples\R2022a\nnet\TransferLearningUsingGoogLeNetExample
+* ===> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\RECOURCES\NNET
 * ===> OneDrive <=== \WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
 
 ********

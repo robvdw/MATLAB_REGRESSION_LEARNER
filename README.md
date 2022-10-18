@@ -8,8 +8,8 @@ The aim is to export trained models on  custom data-sets derived from [Neural De
 
 # Body Fat Estimation
 
-This [Matlab Neural Network example](https://nl.mathworks.com/help/deeplearning/ug/body-fat-estimation.html) illustrates how a function fitting neural network can estimate body fat percentage based on anatomical measurements.
-We start by copying the following  Command in Matlab Command Window ====>
+We first review the [Matlab Neural Network example](https://nl.mathworks.com/help/deeplearning/ug/body-fat-estimation.html) describing how a function fitting neural network can estimate body fat percentage based on anatomical measurements.
+We start by copying the Command ---shown below--- in Matlab Command Window ====>
 
 ```
 openExample('nnet/BodyFatEstimationExample')
@@ -17,6 +17,17 @@ openExample('nnet/BodyFatEstimationExample')
 <p align="center">
 <img src="https://user-images.githubusercontent.com/684692/196523442-38ab2fca-cafa-49e1-b1e4-11dc2876d093.png" width=50% height=50%>
 </p>
+
+********
+********
+
+# RESOURCES
+
+* [AIRA Workshops Miro-Board](https://miro.com/app/board/uXjVOZhJLBM=/?share_link_id=629710348043)
+
+* [MathWorks-Teaching-Resources | Machine-Learning-for-Regression](https://github.com/MathWorks-Teaching-Resources/Machine-Learning-for-Regression)
+
+*
 
 ********
 ********

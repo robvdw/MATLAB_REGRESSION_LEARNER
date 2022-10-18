@@ -80,31 +80,6 @@ view(net)
 ********
 ********
 
-# CSV DATA-SETS
-```
-====> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a---l         6/20/2022   2:37 PM          11272 blood_donation.csv
--a---l        11/19/2021   1:23 AM          21058 bodyfat.csv
--a---l         6/20/2022   2:35 PM          15016 breast_cancer.csv
--a---l         6/29/2022  12:58 PM         318325 combined_cycle_power_plant.csv
--a---l         6/14/2022   9:02 AM          19478 concrete_properties.csv
--a---l         6/20/2022   2:38 PM         239204 creditcard-fraud.csv
--a---l         6/21/2022   9:25 AM          54203 fault_detection.csv
--a---l         6/21/2022   9:39 AM           4616 iris_flowers.csv
--a---l         6/20/2022   3:01 PM        3051145 power-plant-gas-emissions.csv
--a---l         6/13/2022  10:30 PM         255610 telecommunications_churn.csv
--a---l         6/20/2022   3:00 PM          33350 tree_wilt.csv
--a---l         6/20/2022   2:59 PM          11551 yacht_hydrodynamics.csv
-```
-
-********
-********
-
-
-
 # NeuralDesigner: EXPLAINABLE AI PLATFORM
 
 ```
@@ -204,17 +179,35 @@ The app displays information about the exported model in the command window. Rea
  yfit = trainedModelZ.predictFcn(testdata)  % predict
  data{100,end:end}                            % actual
 
-
-
 ```
 
-
 ********
 ********
 
 
 
+# CSV DATA-SETS
+```
+====> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
 
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---l         6/20/2022   2:37 PM          11272 blood_donation.csv
+-a---l        11/19/2021   1:23 AM          21058 bodyfat.csv
+-a---l         6/20/2022   2:35 PM          15016 breast_cancer.csv
+-a---l         6/29/2022  12:58 PM         318325 combined_cycle_power_plant.csv
+-a---l         6/14/2022   9:02 AM          19478 concrete_properties.csv
+-a---l         6/20/2022   2:38 PM         239204 creditcard-fraud.csv
+-a---l         6/21/2022   9:25 AM          54203 fault_detection.csv
+-a---l         6/21/2022   9:39 AM           4616 iris_flowers.csv
+-a---l         6/20/2022   3:01 PM        3051145 power-plant-gas-emissions.csv
+-a---l         6/13/2022  10:30 PM         255610 telecommunications_churn.csv
+-a---l         6/20/2022   3:00 PM          33350 tree_wilt.csv
+-a---l         6/20/2022   2:59 PM          11551 yacht_hydrodynamics.csv
+```
+
+********
+********
 
 # RESOURCES
 

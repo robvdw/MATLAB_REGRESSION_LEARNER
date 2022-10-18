@@ -3,7 +3,14 @@
 This repository shows how to create and compare various regression neural network models using the Matlab Regression Learner app.
 The aim is to export trained models on  custom data-sets derived from [Neural Designer Platform](https://www.neuraldesigner.com/) to make predictions for new data. 
 
-![image](https://user-images.githubusercontent.com/684692/196534778-f10d21a6-5f42-46ae-9fc5-a508ab75e793.png)
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/684692/196535523-57a183fc-ffbf-4f15-ba8b-acad7e5175c3.png" width=60% height=60%>
+</p>
+
+
+[A Simple Example of Pipeline in ML ](https://medium.com/@mannem16/a-simple-example-of-pipeline-in-ml-and-why-do-you-need-to-learn-it-6736795df72a)
 
 
 ********
@@ -18,7 +25,7 @@ We start by copying the Command ---shown below--- in Matlab Command Window ====>
 openExample('nnet/BodyFatEstimationExample')
 ```
 <p align="center">
-<img src="https://user-images.githubusercontent.com/684692/196523442-38ab2fca-cafa-49e1-b1e4-11dc2876d093.png" width=50% height=50%>
+<img src="https://user-images.githubusercontent.com/684692/196523442-38ab2fca-cafa-49e1-b1e4-11dc2876d093.png" width=40% height=40%>
 </p>
 
 ```

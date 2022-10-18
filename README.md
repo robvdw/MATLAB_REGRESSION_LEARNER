@@ -224,6 +224,8 @@ Mode                 LastWriteTime         Length Name
 
 * [Data Sets for Deep Learning](https://nl.mathworks.com/help/deeplearning/ug/data-sets-for-deep-learning.html#responsive_offcanvas)
 
+*[Train Deep Learning Network to Classify New Images](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html)
+
 * ===> OneDrive <=== \WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
 
 ********

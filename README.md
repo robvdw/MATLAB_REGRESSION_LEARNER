@@ -80,6 +80,117 @@ view(net)
 ********
 ********
 
+# NeuralDesigner: EXPLAINABLE AI PLATFORM
+
+```
+%%%% https://www.neuraldesigner.com/
+%%%% EXAMPLE https://www.neuraldesigner.com/learning/examples/telecommunications-churn#DataSet
+clear all
+
+%%%% folder path 
+dirName = 'C:\Users\rob\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+
+%%dirName = 'C:\Users\PROMET01\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+
+%dirName = 'C:\Users\PROMET01\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+cd(dirName) %make it the current directory
+
+files = dir(fullfile(dirName,'*.csv') );   %# list all *.xyz files
+files = {files.name}';                      %'# file names 
+
+
+numfiles = files;
+for k=1:length(numfiles)
+  numfiles{k}=[num2str(k), ' ',numfiles{k}];
+end
+
+disp(numfiles)
+clear k,numfiles
+
+
+data = readtable(char(files(5)))
+% [data tb] = rmoutliers(cdata);
+% data
+varnames=data.Properties.VariableNames
+
+
+%%% CREATE TEST DATA
+
+testdata=data(100,1:end)
+%%%%%yfit = trainedModelrob.predictFcn(testdata)
+
+%%% CREATE histogram from NOx variable
+
+histogram(data.(2))
+
+x=1:width(data)-1;
+y=data{1:end,2};
+
+% z=data{1:end,2};
+% [y,tb] = rmoutliers(z);  %remove outliers
+
+
+ncount=hist(y)
+relativefreq = ncount/length(y);
+numIntervals =  12;
+intervalWidth = (max(y) - min(y))/numIntervals;
+bar(relativefreq,1)
+xlim([min(x) max(x)])
+set(gca, 'xtick', x)
+text(x,relativefreq,num2str((relativefreq*100)','%0.2f'),'vert','bottom','horiz','center'); 
+box off
+
+format short
+[r, p]= corrcoef(data.(1),data.(width(data)))
+
+measurement_vars =  data{1:end,1:width(data)-2}
+target_var = data.(width(data))
+cdata = corr(measurement_vars,target_var,'rows','complete')
+labels = categorical( regexprep(varnames(1:end-2), '_', ' ') )
+
+
+%[a b ] = sort(labels,'ascend')
+[a b] = sort(abs(cdata))
+barh(cdata(b))
+set(gca, 'YTickLabel', labels(b))
+xx=1:6;
+yy=cdata(b);
+text(yy,xx,num2str((yy),'%0.2f'),'horiz','center','vert','bottom')
+box off
+
+Here are the steps for exporting a model to the MATLAB® workspace:
+In the app, select the model you want to export in the Models pane.
+On the Regression Learner tab, in the Export section, click one of the export options:
+To include the data used for training the model, click Export Model and select Export Model. This option exports the trained model to the workspace as a structure containing a regression object, such as RegressionTree. The model object includes the training data when possible. Note that some models, such as kernel approximation models, never store training data.
+
+To exclude the training data, click Export Model and select Export Compact Model. This option exports the model with unnecessary data removed. That is, the exported structure contains a regression object that, when possible, does not include the training data. You can still use the model for making predictions on new data.
+In the Export Model dialog box, check the name of your exported variable, and edit it if you want. Then, click OK. The default name for your exported model, trainedModel, increments every time you export to avoid overwriting your models (for example, trainedModel1).
+The new variable (for example, trainedModel) appears in your workspace.
+The app displays information about the exported model in the command window. Read the message to learn how to make predictions with new data.
+
+%%%% HOW TO USE MODEL TO PREDICT
+% On the Regression Learner tab, in the Export section, click one of the export option
+% ====> Export Compact Mode
+
+% read in test Data as a Cell labels + values
+ testdata=data(100,1:end-1);
+
+ %%%  predicted vs actual
+ yfit = trainedModelZ.predictFcn(testdata)  % predict
+ data{100,end:end}                            % actual
+
+
+
+```
+
+
+********
+********
+
+
+
+
+
 # RESOURCES
 
 * [AIRA Workshops Miro-Board](https://miro.com/app/board/uXjVOZhJLBM=/?share_link_id=629710348043)
@@ -93,6 +204,8 @@ view(net)
 * [Shallow Neural Networks with Parallel and GPU Computing](https://nl.mathworks.com/help/deeplearning/ug/neural-networks-with-parallel-and-gpu-computing.html)
 
 * [Data Sets for Deep Learning](https://nl.mathworks.com/help/deeplearning/ug/data-sets-for-deep-learning.html#responsive_offcanvas)
+
+* ===> OneDrive <=== \WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
 
 ********
 ********

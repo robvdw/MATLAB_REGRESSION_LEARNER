@@ -14,11 +14,9 @@ We start by copying the following  Command in Matlab Command Window ====>
 ```
 openExample('nnet/BodyFatEstimationExample')
 ```
-
-![BodyFatEstimationExample_01](https://user-images.githubusercontent.com/684692/196523442-38ab2fca-cafa-49e1-b1e4-11dc2876d093.png)
-
-
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/684692/196523442-38ab2fca-cafa-49e1-b1e4-11dc2876d093.png" width=50% height=50%>
+</p>
 
 ********
 ********

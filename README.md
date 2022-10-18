@@ -3,7 +3,7 @@
 This repository shows how to create and compare various regression neural network models using the Matlab Regression Learner app.
 The aim is to export trained models on  custom data-sets derived from [Neural Designer Platform](https://www.neuraldesigner.com/) to make predictions for new data. 
 
-![image](https://user-images.githubusercontent.com/684692/196533072-dfd2853b-3d81-41d4-b522-c9f888ae647b.png)
+![image](https://user-images.githubusercontent.com/684692/196534778-f10d21a6-5f42-46ae-9fc5-a508ab75e793.png)
 
 
 ********

@@ -80,6 +80,157 @@ view(net)
 ********
 ********
 
+# NeuralDesigner: EXPLAINABLE AI PLATFORM
+
+
+```
+%%%% https://www.neuraldesigner.com/
+%%%% EXAMPLE https://www.neuraldesigner.com/learning/examples/telecommunications-churn#DataSet
+clear all
+
+%%%% folder path 
+dirName = 'C:\Users\rob\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+
+%%dirName = 'C:\Users\PROMET01\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+
+%dirName = 'C:\Users\PROMET01\OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET';
+cd(dirName) %make it the current directory
+
+files = dir(fullfile(dirName,'*.csv') );   %# list all *.xyz files
+files = {files.name}';                      %'# file names 
+
+
+numfiles = files;
+for k=1:length(numfiles)
+  numfiles{k}=[num2str(k), ' ',numfiles{k}];
+end
+
+disp(numfiles)
+clear k,numfiles
+
+
+data = readtable(char(files(5)))
+% [data tb] = rmoutliers(cdata);
+% data
+varnames=data.Properties.VariableNames
+
+
+%%% CREATE TEST DATA
+
+testdata=data(100,1:end)
+%%%%%yfit = trainedModelrob.predictFcn(testdata)
+
+%%% CREATE histogram from NOx variable
+
+histogram(data.(2))
+
+x=1:width(data)-1;
+y=data{1:end,2};
+
+% z=data{1:end,2};
+% [y,tb] = rmoutliers(z);  %remove outliers
+
+
+ncount=hist(y)
+relativefreq = ncount/length(y);
+numIntervals =  12;
+intervalWidth = (max(y) - min(y))/numIntervals;
+bar(relativefreq,1)
+xlim([min(x) max(x)])
+set(gca, 'xtick', x)
+text(x,relativefreq,num2str((relativefreq*100)','%0.2f'),'vert','bottom','horiz','center'); 
+box off
+
+format short
+[r, p]= corrcoef(data.(1),data.(width(data)))
+
+measurement_vars =  data{1:end,1:width(data)-2}
+target_var = data.(width(data))
+cdata = corr(measurement_vars,target_var,'rows','complete')
+labels = categorical( regexprep(varnames(1:end-2), '_', ' ') )
+
+
+%[a b ] = sort(labels,'ascend')
+[a b] = sort(abs(cdata))
+barh(cdata(b))
+set(gca, 'YTickLabel', labels(b))
+xx=1:6;
+yy=cdata(b);
+text(yy,xx,num2str((yy),'%0.2f'),'horiz','center','vert','bottom')
+box off
+
+Here are the steps for exporting a model to the MATLAB® workspace:
+In the app, select the model you want to export in the Models pane.
+On the Regression Learner tab, in the Export section, click one of the export options:
+To include the data used for training the model, click Export Model and select Export Model. This option exports the trained model to the workspace as a structure containing a regression object, such as RegressionTree. The model object includes the training data when possible. Note that some models, such as kernel approximation models, never store training data.
+
+To exclude the training data, click Export Model and select Export Compact Model. This option exports the model with unnecessary data removed. That is, the exported structure contains a regression object that, when possible, does not include the training data. You can still use the model for making predictions on new data.
+In the Export Model dialog box, check the name of your exported variable, and edit it if you want. Then, click OK. The default name for your exported model, trainedModel, increments every time you export to avoid overwriting your models (for example, trainedModel1).
+The new variable (for example, trainedModel) appears in your workspace.
+The app displays information about the exported model in the command window. Read the message to learn how to make predictions with new data.
+
+%%%% HOW TO USE MODEL TO PREDICT
+% On the Regression Learner tab, in the Export section, click one of the export option
+% ====> Export Compact Mode
+
+% read in test Data as a Cell labels + values
+ testdata=data(100,1:end-1);
+
+ %%%  predicted vs actual
+ yfit = trainedModelZ.predictFcn(testdata)  % predict
+ data{100,end:end}                            % actual
+
+```
+
+********
+********
+
+
+
+# TRANSFER_LEARNING WITH PRE_TRAINED DEEP NEURAL NETWORKS
+
+This example shows how to use transfer learning to retrain a convolutional neural network to classify a new set of images.
+
+[Pretrained image classification networks](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html) have been trained on over a million images and can classify images into 1000 object categories, such as keyboard, coffee mug, pencil, and many animals. The networks have learned rich feature representations for a wide range of images. The network takes an image as input, and then outputs a label for the object in the image together with the probabilities for each of the object categories.
+
+Transfer learning is commonly used in deep learning applications. You can take a pretrained network and use it as a starting point to learn a new task. Fine-tuning a network with transfer learning is usually much faster and easier than training a network from scratch with randomly initialized weights. You can quickly transfer learned features to a new task using a smaller number of training images.
+
+We start by copying the Command ---shown below--- in Matlab Command Window ====>
+
+```
+openExample('nnet/TransferLearningUsingGoogLeNetExample')
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/684692/196542137-587f7b53-f023-4652-8926-3819cb7d37b6.png" width=100% height=100%>
+</p>
+
+
+
+
+
+# CSV DATA-SETS
+```
+====> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---l         6/20/2022   2:37 PM          11272 blood_donation.csv
+-a---l        11/19/2021   1:23 AM          21058 bodyfat.csv
+-a---l         6/20/2022   2:35 PM          15016 breast_cancer.csv
+-a---l         6/29/2022  12:58 PM         318325 combined_cycle_power_plant.csv
+-a---l         6/14/2022   9:02 AM          19478 concrete_properties.csv
+-a---l         6/20/2022   2:38 PM         239204 creditcard-fraud.csv
+-a---l         6/21/2022   9:25 AM          54203 fault_detection.csv
+-a---l         6/21/2022   9:39 AM           4616 iris_flowers.csv
+-a---l         6/20/2022   3:01 PM        3051145 power-plant-gas-emissions.csv
+-a---l         6/13/2022  10:30 PM         255610 telecommunications_churn.csv
+-a---l         6/20/2022   3:00 PM          33350 tree_wilt.csv
+-a---l         6/20/2022   2:59 PM          11551 yacht_hydrodynamics.csv
+```
+
+********
+********
+
 # RESOURCES
 
 * [AIRA Workshops Miro-Board](https://miro.com/app/board/uXjVOZhJLBM=/?share_link_id=629710348043)
@@ -93,6 +244,12 @@ view(net)
 * [Shallow Neural Networks with Parallel and GPU Computing](https://nl.mathworks.com/help/deeplearning/ug/neural-networks-with-parallel-and-gpu-computing.html)
 
 * [Data Sets for Deep Learning](https://nl.mathworks.com/help/deeplearning/ug/data-sets-for-deep-learning.html#responsive_offcanvas)
+
+* [Train Deep Learning Network to Classify New Images](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html)
+
+* ===> C:\Users\rob\Documents\MATLAB\Examples\R2022a\nnet\TransferLearningUsingGoogLeNetExample
+* ===> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\RECOURCES\NNET
+* ===> OneDrive <=== \WORKSHOPS\AI_TOEPASSER\RECOURCES\NEURAL_DESIGNER\DATA_SET
 
 ********
 ********

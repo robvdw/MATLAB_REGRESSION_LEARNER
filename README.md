@@ -88,6 +88,7 @@ Here we try to recereate [the Modeling  of the compressive strength of high perf
 
 https://www.neuraldesigner.com/learning/examples/concrete-properties-assessment
 
+![image](https://user-images.githubusercontent.com/684692/196545796-f70979df-11c0-4853-a8c7-a5f678f865fa.png)
 
 ```
 %%%% https://www.neuraldesigner.com/

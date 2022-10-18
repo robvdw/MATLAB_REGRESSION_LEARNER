@@ -82,6 +82,12 @@ view(net)
 
 # NeuralDesigner: EXPLAINABLE AI PLATFORM
 
+Here we try to recereate [the Modeling  of the compressive strength of high performance concretes using machine learning](https://www.neuraldesigner.com/learning/examples/concrete-properties-assessment)
+
+![image](https://user-images.githubusercontent.com/684692/196544532-dbadf666-c95e-4a24-957b-fcba916c36af.png)
+
+https://www.neuraldesigner.com/learning/examples/concrete-properties-assessment
+
 
 ```
 %%%% https://www.neuraldesigner.com/
@@ -257,6 +263,8 @@ Mode                 LastWriteTime         Length Name
 * [Data Sets for Deep Learning](https://nl.mathworks.com/help/deeplearning/ug/data-sets-for-deep-learning.html#responsive_offcanvas)
 
 * [Train Deep Learning Network to Classify New Images](https://nl.mathworks.com/help/deeplearning/ug/train-deep-learning-network-to-classify-new-images.html)
+
+* [NeuralDesigner DataSets](https://www.neuraldesigner.com/blog?tag=Tutorials)
 
 * ===> C:\Users\rob\Documents\MATLAB\Examples\R2022a\nnet\TransferLearningUsingGoogLeNetExample
 * ===> \OneDrive - Hogeschool Rotterdam\WORKSHOPS\RECOURCES\NNET

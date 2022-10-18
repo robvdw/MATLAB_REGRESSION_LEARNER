@@ -204,7 +204,18 @@ openExample('nnet/TransferLearningUsingGoogLeNetExample')
 <img src="https://user-images.githubusercontent.com/684692/196542137-587f7b53-f023-4652-8926-3819cb7d37b6.png" width=100% height=100%>
 </p>
 
+```
+====>  cd('C:\Users\rob\Documents\MATLAB\Examples\R2022a\nnet\TransferLearningUsingGoogLeNetExample')
+====> MUST contain images folder <=====
 
+%%unzip('images.zip');
+%%openExample('nnet/TransferLearningUsingGoogLeNetExample')
+imds = imageDatastore('images', ...
+    'IncludeSubfolders',true, ...
+    'LabelSource','foldernames'); 
+[imdsTrain,imdsValidation] = splitEachLabel(imds,0.7);
+
+```
 
 
 

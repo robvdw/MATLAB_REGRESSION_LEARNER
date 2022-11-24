@@ -279,7 +279,7 @@ Mode                 LastWriteTime         Length Name
 
 ```mermaid
 graph TD;
-    A-->B --> C;
+    A-->B;
     A-->C;
     B-->D;
     C-->D;
